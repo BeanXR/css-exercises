@@ -1,0 +1,13 @@
+.top {
+    background-color: black;
+    color: white;
+}
+
+.bottom {
+    background-color: yellow;
+}
+
+.top, .bottom {
+    font-size: 28px;
+    font-family: "Helvetica","Times New Roman",'sans-serif';
+}
