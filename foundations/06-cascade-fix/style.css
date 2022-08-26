@@ -2,22 +2,35 @@ body{
   font-family:Arial, Helvetica, sans-serif
 }
 
+/* .para and .small-para, each is a single selector, seperated by comma/grouping */
+/* specificty is only applied on each single selector */
+/* hence changing font-weight doesn't affect the "small-para" as it is then declared at the bottom again */
+
+/* .para,
+.small-para {
+  color: hsl(0, 0%, 0%);
+  font-weight: 800;
+} */
+
 .para,
 .small-para {
   color: hsl(0, 0%, 0%);
   font-weight: 800;
 }
 
-.small-para {
+/* higher specifity than the style specified below, hence taking 14px */
+.para.small-para {
   font-size: 14px;
   font-weight: 800;
 }
 
+/* lower specificity than above */
 .para {
   font-size: 22px;
 }
 
-.confirm {
+/* without chaining button, it will use style declared below, since declared later and both button element has class=button, overwriting it */
+.confirm.button {
   background: green;
   color: white;
   font-weight: bold;
@@ -29,7 +42,8 @@ body{
   font-size: 20px;
 }
 
-.child {
+/* now it uses two class selectors, and bottom is using one class, one type which has lower specificity than class */
+.child.text{
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
